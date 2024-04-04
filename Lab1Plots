@@ -1,0 +1,32 @@
+import numpy as np 
+import matplotlib as mpl 
+import matplotlib.pyplot as plt
+
+figure, axis = plt.subplots(2,2)
+Id = np.array([0/.988,0/.988,0,0,0,0,0,0,0,0,0,0,0,0,0.06/.988,0.24/.988,0.46/.988,0.69/.988,0.93/.988,1.16/.988,1.41/.988,1.66/.988,1.89/.988,2.16/.988,2.4/.988])
+Vin = np.array([-3,-2.75,-2.5,-2.25,-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0,0.25,0.5,0.75,1,1.25,1.5,1.75,2,2.25,2.5,2.75,3])
+Vout = np.array([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.06,0.24,0.46,0.69,0.93,1.16,1.41,1.66,1.89,2.16,2.4])
+Vd = np.array([-3,-2.75,-2.5,-2.25,-2,-1.75,-1.5,-1.25,-1,-0.75,-0.5,-0.25,0,0.25,0.44,0.51,0.54,0.56,0.57,0.59,0.59,0.59,0.61,0.59,0.6])
+figure.suptitle("Plots for Id vs Vin, Vin vs Vout, and Id vs Vd")
+axis[0,0].plot(Vin,Id,color="red")
+axis[0,0].scatter(Vin,Id,color="red")
+axis[0,0].set_title("Id vs Vin")
+axis[0,0].set_xlabel("Vin (V)")
+axis[0,0].set_ylabel("Id (mA)")
+axis[1,0].plot(Vin,Vout,color="blue")
+axis[1,0].scatter(Vin,Vout,color="blue")
+axis[1,0].set_title("Vin vs Vout")
+axis[1,0].set_xlabel("Vin (V)")
+axis[1,0].set_ylabel("Vout (V)")
+axis[0,1].plot(Vd,Id,color="green")
+axis[0,1].scatter(Vd,Id,color="green")
+axis[0,1].set_title("Id vs Vd")
+axis[0,1].set_xlabel("Vd (V)")
+axis[0,1].set_ylabel("Id (mA)")
+axis[1,1].plot(Id,Vout,color="yellow")
+axis[1,1].scatter(Id,Vout,color="yellow")
+axis[1,1].set_title("Id vs Vout")
+axis[1,1].set_xlabel("Id (mA)")
+axis[1,1].set_ylabel("Vout (V)")
+
+plt.show()
